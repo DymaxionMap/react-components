@@ -1,6 +1,14 @@
-const GroceryListItem = (props) => (
-  <li>{props.item}</li>
-);
+class GroceryListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <li>{this.props.item}</li>
+    );
+  }
+}
 
 const GroceryList = (props) => {
   const groceryListItems = props.items.map(item => <GroceryListItem item={item} />);
