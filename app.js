@@ -1,16 +1,14 @@
-const BlueCheese = () => (
-  <li>Blue cheese</li>  
+const GroceryListItem = (props) => (
+  <li>{props.item}</li>
 );
 
-const Mangoes = () => (
-  <li>Mangoes</li>
-);
+const GroceryList = (props) => {
+  const groceryListItems = props.items.map(item => <GroceryListItem item={item} />);
+  return (
+    <ul>
+      {groceryListItems}
+    </ul>
+  );
+};
 
-const GroceryList = () => (
-  <ul>
-    <BlueCheese />
-    <Mangoes />
-  </ul>
-);
-
-ReactDOM.render(<GroceryList />, document.getElementById('app'));
+ReactDOM.render(<GroceryList items={['Cheddar Cheese', 'Dragonfruit', 'Bolillo Roll']} />, document.getElementById('app'));
